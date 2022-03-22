@@ -1,13 +1,16 @@
+import lombok.Getter;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
+@Getter
 public class ReadFromResourcesToConnectionsSQL {
-    String db_driver;
-    String url;
-    String user;
-    String password;
+    private String db_driver;
+    private String url;
+    private String user;
+    private String password;
 
     ReadFromResourcesToConnectionsSQL(String direction)
     {
