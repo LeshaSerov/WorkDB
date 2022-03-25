@@ -3,17 +3,17 @@ import lombok.Getter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.List;
 
-@Getter
 public class ReadFromResourcesToConnectionsSQL {
-    private String db_driver;
-    private String url;
-    private String user;
-    private String password;
 
-    ReadFromResourcesToConnectionsSQL(String direction)
+    public static ArrayList<String> getInformationForConnection(String direction)
     {
+        String db_driver = null;
+        String url = null;
+        String user = null;
+        String password = null;
         try {
             Path path = Path.of(direction);
             List<String> list = Files.readAllLines(path);
@@ -35,6 +35,12 @@ public class ReadFromResourcesToConnectionsSQL {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        ArrayList <String> result = new ArrayList<String>(4);
+        result.add(db_driver);
+        result.add(url);
+        result.add(user);
+        result.add(password);
+        return result;
     }
 
 }

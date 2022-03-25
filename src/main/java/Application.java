@@ -1,13 +1,22 @@
-import java.sql.Connection;
+import java.sql.*;
+import java.util.List;
 
 //Написать класс который будет по данному адрессу считывать необходимую информацию о базе данных.
 //Написать класс который работает с базой данных. то есть конструктор. и вызывать необходимые методы.
 
 public class Application {
 
-    public static void main(String... args) {
-        ReadFromResourcesToConnectionsSQL readFromResourcesToConnectionsSQL = new ReadFromResourcesToConnectionsSQL("C:\\Users\\Резервный\\IdeaProjects\\WorkDatabase\\src\\main\\resources\\a.txt");
-        Connection con = ConnectionManager.getConnection(readFromResourcesToConnectionsSQL);
+    public static void main(String... args) throws SQLException {
+        Connection con = ConnectionManager.getConnection(ReadFromResourcesToConnectionsSQL.getInformationForConnection("C:\\Users\\Резервный\\IdeaProjects\\WorkDatabase\\src\\main\\resources\\a.txt"));
+        Statement stmt = con.createStatement();
+
+        //User user1 = new User(1, "Коля","Сергеев","Живет под крышей");
+        User user1 = new User(2, "Коля","Сергеев","Живет под крышей");
+
+        //PreparedStatement st = con.prepareStatement(user1.insertUserInSQL());
+        ResultSet rs = stmt.executeQuery(user1.insertUserInSQL());
+
+        System.out.println(rs);
     }
 
     private static void fichi() {
