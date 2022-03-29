@@ -1,4 +1,0 @@
-        String DB_Driver = "org.postgresql.Driver"
-        String URL = "jdbc:postgresql://localhost:5432/FirstDatabase"
-        String User = "Editor"
-        String Password = "editor"

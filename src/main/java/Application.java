@@ -1,5 +1,6 @@
+import domain.User;
+
 import java.sql.*;
-import java.util.List;
 
 //Написать класс который будет по данному адрессу считывать необходимую информацию о базе данных.
 //Написать класс который работает с базой данных. то есть конструктор. и вызывать необходимые методы.
@@ -10,7 +11,7 @@ public class Application {
         Connection con = ConnectionManager.getConnection(ReadFromResourcesToConnectionsSQL.getInformationForConnection("C:\\Users\\Резервный\\IdeaProjects\\WorkDatabase\\src\\main\\resources\\a.txt"));
         Statement stmt = con.createStatement();
 
-        //User user1 = new User(1, "Коля","Сергеев","Живет под крышей");
+        //domain.User user1 = new domain.User(1, "Коля","Сергеев","Живет под крышей");
         User user1 = new User(2, "Коля","Сергеев","Живет под крышей");
 
         //PreparedStatement st = con.prepareStatement(user1.insertUserInSQL());

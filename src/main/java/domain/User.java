@@ -1,3 +1,5 @@
+package domain;
+
 import lombok.Getter;
 
 @Getter
@@ -14,12 +16,4 @@ public class User {
         About = about;
     }
 
-    public String insertUserInSQL()
-    {
-        return "INSERT INTO \"Users\"(\"ID\", \"Name\", \"Surname\", \"About\") " +
-                "VALUES(" + ID + ","
-                + "'{" + Name + "}',"
-                + "'{" + Surname + "}',"
-                + "'{" + About + "}');";
-    }
 }

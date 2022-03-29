@@ -25,7 +25,7 @@ public class ReadFromResourcesToConnectionsSQL {
                 else if (str.contains("String URL =")){
                     url = substring;
                 }
-                else if (str.contains("String User =")){
+                else if (str.contains("String domain.User =")){
                     user = substring;
                 }
                 else if (str.contains("String Password =")){
