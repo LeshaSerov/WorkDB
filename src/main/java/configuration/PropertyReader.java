@@ -7,7 +7,7 @@ import java.util.Properties;
 
 @Getter
 public class PropertyReader {
-    //private String JDBC_PROPERTIES = ".src\\main\\resources\\jdbc.properties";
+    //private String JDBC_PROPERTIES = ".src\\main\\resources\\jdbc.properties"; так нельзя делать
     private String db_driver;
     private String url;
     private String user;
